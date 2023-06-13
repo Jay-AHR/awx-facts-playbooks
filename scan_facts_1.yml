@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+  - name : Scan current services status
+    scan_services:
+    register: running_services
+  - name: print
+    debug: var=item
+    with_items: "{{ running_services.|json_query('ansible_facts.services.[?state=='running'].name')}}"
