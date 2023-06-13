@@ -3,6 +3,6 @@
   tasks:
   - name : Scan current services status
     scan_services:
-    register: running_services
+    register: running
   - name: print
     debug: var=ansible_facts.services
