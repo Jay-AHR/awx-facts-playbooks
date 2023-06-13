@@ -5,8 +5,6 @@
   tasks:
 
     - name: "Scan packages (Unix/Linux)"
-      debug:
-        var=vars
       scan_packages:
         os_family: '{{ ansible_os_family }}'
       when: ansible_os_family != "Windows"
