@@ -7,4 +7,4 @@
     when: ansible_os_family != "Windows"
     register: installed
   - name: print
-    debug: var=ansible_facts.packages
+    debug: var=ansible_facts.package_facts
