@@ -4,5 +4,11 @@
   - name : Scan current services status
     scan_services:
     register: running_services
+  - name: "Scan packages (Unix/Linux)"
+    scan_packages:
+      os_family: '{{ ansible_os_family }}'
+    when: ansible_os_family != "Windows"
+    register: installed
   - name: print
     debug: var=ansible_facts.services
+    debug: var=ansible_facts.packages
