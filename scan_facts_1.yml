@@ -5,4 +5,4 @@
     scan_services:
     register: running_services
   - name: print
-    debug: var=item
+    debug: var=ansible_facts.services
