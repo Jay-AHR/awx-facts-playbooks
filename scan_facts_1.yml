@@ -1,8 +1,6 @@
 ---
 - hosts: all
   tasks:
-  - name : Scan current processes status
-    scan_processes:
-    register: running
-  - name: print
-    debug: var=ansible_facts.processes
+  - name: Print all available facts
+    ansible.builtin.debug:
+      var: ansible_facts
